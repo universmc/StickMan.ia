@@ -3,7 +3,7 @@ const Groq = require('groq-sdk');
 const groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
 
 
-const bot = new Telegraf('7076677498:AAENW2qH-odLyCTc2s_KympOHsrXZhvMt9c', {
+const bot = new Telegraf('7308748601:AAGB-s6Y6ybWbh9Ub-8asBbAqbV4nkmC9O0', {
   telegram: {
     webhookReply: true,
   },
@@ -189,7 +189,7 @@ bot.on('message', async (ctx) => {
         const chatCompletion = await groq.chat.completions.create({
           messages: [
             {role: 'system',content:`"groq -R > ${run}.${Workers}"`},
-            {role: 'assistant',content:`"bonjour, nous sommes en face de configuration du system Web ${Workers}, veuillez continuer la conversation normalement sur Telegram"`},
+            {role: 'assistant',content:`"bonjour, Sticky (stickMan --ia), '🧘🏼',  nous sommes en face de configuration du system Web ${Workers}, veuillez continuer la conversation normalement sur Telegram"`},
             {
                 role: 'user',
                 content: userInput,
@@ -221,5 +221,5 @@ async function chatCompletion(messages, model) {
 
 module.exports = { chatCompletion };
 
-console.log(`Server Telegram running ✨.user_Pibot.`);
+console.log(`Stickman running On Telegram ✨ [ 🧘🏼 ] ✨ `);
 bot.launch();
